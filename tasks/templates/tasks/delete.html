@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<style>
+    body{
+        background-color: #638CB8;
+    }
+    input{
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+    input::placeholder{
+        color: #d3d3d3;
+    }
+    .submit{
+        background-color: #6BA3E8;
+    }
+    .center-column{
+        width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 3px;
+        box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+    }
+    .button-row{
+        
+        padding: 20px;
+        
+        width: 100%;
+        font-size: 16px;
+        box-shadow: 0px -1px 10px -4px rgba(0,0,0,0.75);
+    }
+
+</style>
+<div class="center-column">
+    <p>Are you sure you want do delete <b>"{{item}}"</b> ?</p>
+
+    <div>
+        <a class="btn btn-info button-row" href="{% url 'list' %}">Cancel</a>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <input class="btn btn-danger button-row" type="submit" value="Confirm">
+        </form>
+    </div>
+</div>
